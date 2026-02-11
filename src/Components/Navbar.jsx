@@ -12,7 +12,7 @@ function Navbar() {
         border-b border-gray-200
       "
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="mx-auto px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link
             to="/"
