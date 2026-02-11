@@ -1,15 +1,70 @@
-import {Link} from 'react-router-dom';
-import {useCart} from './CartContext';
+import { Link } from 'react-router-dom';
+import { useCart } from './CartContext';
 
-function Navbar(){
-    const {totalItems} = useCart();
-    return (
-        <nav className='bg-white px-6 py-4 shadow flex gap-6'>
-            <Link to='/' className='font-semibold hover:text-blue-600'>Home</Link>
-            <Link to='/shop' className='font-semibold hover:text-blue-600'>Shop</Link>
-            <Link to='/cart' className='font-semibold hover:text-blue-600'>Cart ({totalItems})</Link>
-        </nav>
-    );
+function Navbar() {
+  const { totalItems } = useCart();
+
+  return (
+    <nav
+      className="
+        sticky top-0 z-50
+        bg-white/90 backdrop-blur
+        border-b border-gray-200
+      "
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-8">
+          <Link
+            to="/"
+            className="
+              font-semibold relative
+              after:absolute after:left-0 after:-bottom-1
+              after:h-[2px] after:w-0
+              after:bg-blue-600
+              after:transition-all
+              hover:after:w-full
+            "
+          >
+            Home
+          </Link>
+
+          <Link
+            to="/shop"
+            className="
+              font-semibold relative
+              after:absolute after:left-0 after:-bottom-1
+              after:h-[2px] after:w-0
+              after:bg-blue-600
+              after:transition-all
+              hover:after:w-full
+            "
+          >
+            Shop
+          </Link>
+        </div>
+
+        <Link
+          to="/cart"
+          className="
+            font-semibold flex items-center gap-2
+            hover:text-blue-600 transition-colors
+          "
+        >
+          Cart
+          <span
+            className="
+              bg-blue-600 text-white
+              text-xs font-medium
+              px-2 py-0.5 rounded-full
+              min-w-[20px] text-center
+            "
+          >
+            {totalItems}
+          </span>
+        </Link>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;
