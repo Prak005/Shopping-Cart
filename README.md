@@ -1,1 +1,1 @@
-live at https://shopping-cart-7c8.pages.dev/shop
+live at https://shopping-cart-7c8.pages.dev
